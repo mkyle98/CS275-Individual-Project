@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">SnackTracker</string>
+    <string name="snack_name_hint">Enter a name for the snack.</string>
+    <string name="snack_name_label">Name</string>
+    <string name="snack_details_label">Details</string>
+    <string name="snack_found_label">Found</string>
+    <string name="snack_name">Snack Name</string>
+    <string name="snack_date">Snack Date</string>
+</resources>
