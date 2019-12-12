@@ -6,4 +6,10 @@
     <string name="snack_found_label">Found</string>
     <string name="snack_name">Snack Name</string>
     <string name="snack_date">Snack Date</string>
+    <string name="new_snack">New Snack</string>
+    <string name="show_subtitle">Show Subtitle</string>
+    <string name="hide_subtitle">Hide Subtitle</string>
+    <string name="subtitle_format">%1$d snacks</string>
+    <string name="delete_snack">Delete Snack</string>
+
 </resources>

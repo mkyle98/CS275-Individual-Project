@@ -19,7 +19,9 @@
         </activity>
 
 
-        <activity android:name=".SnackActivity">
+        <activity
+            android:name=".SnackPagerActivity"
+            android:parentActivityName=".SnackListActivity">
         </activity>
 
 

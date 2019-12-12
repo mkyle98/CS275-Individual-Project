@@ -4,6 +4,9 @@ import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
@@ -43,6 +46,36 @@ public class SnackFragment extends Fragment {
         super.onCreate(savedInstanceState);
         UUID snackId = (UUID) getArguments().getSerializable(ARG_SNACK_ID);
         mSnack = SnackCloset.get(getActivity()).getSnack(snackId);
+        setHasOptionsMenu(true);
+    }
+
+    @Override
+    public void onPause(){
+        super.onPause();
+
+        SnackCloset.get(getActivity())
+                .updateSnack(mSnack);
+    }
+
+    @Override
+    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater){
+        super.onCreateOptionsMenu(menu, inflater);
+        inflater.inflate(R.menu.fragment_snack, menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item){
+        switch(item.getItemId()){
+            case R.id.menu_item_delete_snack:
+                UUID snackId = (UUID) getArguments().getSerializable(ARG_SNACK_ID);
+                SnackCloset snackCloset = SnackCloset.get(getActivity());
+                mSnack = snackCloset.getSnack(snackId);
+                snackCloset.deleteSnack(mSnack);
+                getActivity().finish();
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
     }
 
     @Nullable
@@ -78,7 +111,7 @@ public class SnackFragment extends Fragment {
         mFoundCheckBox.setOnCheckedChangeListener(new OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
-                mSnack.ismFound();
+                mSnack.setmFound(b);
             }
         });
 

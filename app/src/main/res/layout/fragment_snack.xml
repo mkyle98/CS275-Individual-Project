@@ -7,25 +7,31 @@
         style="?android:listSeparatorTextViewStyle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/snack_name_label"/>
+        android:fontFamily="serif"
+        android:text="@string/snack_name_label"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
     <EditText
         android:id="@+id/snack_name"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="@string/snack_name_hint"/>
+
     <TextView
         style="?android:listSeparatorTextViewStyle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/snack_details_label"/>
+        android:fontFamily="serif"
+        android:text="@string/snack_details_label" />
     <Button
         android:id="@+id/snack_date"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
+
     <CheckBox
         android:id="@+id/snack_found"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/snack_found_label"/>
+        android:fontFamily="serif"
+        android:text="@string/snack_found_label" />
 
 </LinearLayout>

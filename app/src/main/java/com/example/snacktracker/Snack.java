@@ -10,12 +10,20 @@ public class Snack {
     private boolean mFound;
 
     public Snack(){
-        mId = UUID.randomUUID();
+        this(UUID.randomUUID());
+    }
+
+    public Snack(UUID id){
+        mId = id;
         mDate = new Date();
     }
 
     public String getmTitle() {
-        return mTitle;
+        if (mTitle == null){
+            return "None";
+        }else{
+            return mTitle;
+        }
     }
 
     public void setmTitle(String mTitle) {
